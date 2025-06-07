@@ -18,7 +18,7 @@ const Product = ({ post }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between gap-4 max-w-[300px] hover:scale-110 transition duration-300 ease-in-out p-4 mt-12 rounded-xl shadow-xl hover:shadow-xl hover:shadow-gray-300 hover:bg-gray-100">
+    <div className="flex flex-col items-center justify-between gap-4 max-w-[300px] transition-all duration-300 ease-in-out p-4 mt-12 rounded-xl shadow-lg hover:scale-110 hover:shadow-xl hover:shadow-gray-300 hover:bg-gray-100 group focus-within:scale-110 focus-within:bg-gray-100 focus-within:shadow-xl" tabIndex={0}>
       <div className="flex items-center justify-center w-full">
         <p className="text-gray-700 font-semibold text-lg text-center truncate w-full px-2 mt-1">
           {post.title}
@@ -38,14 +38,14 @@ const Product = ({ post }) => {
         </div>
         {cart.some((p) => p.id === post.id) ? (
           <button
-            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold text-[12px] py-1 px-4 uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in"
+            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold text-[12px] py-1 px-4 uppercase hover:bg-gray-600 hover:text-white transition duration-300 ease-in group focus-within:bg-gray-700 focus-within:text-white"
             onClick={removeFromCart}
           >
             Remove Item
           </button>
         ) : (
           <button
-            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold text-[12px] py-1 px-4 uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in"
+            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold text-[12px] py-1 px-4 uppercase hover:bg-gray-600 hover:text-white transition duration-300 ease-in group focus-within:bg-gray-700 focus-within:text-white"
             onClick={addToCart}
           >
             Add to Cart
